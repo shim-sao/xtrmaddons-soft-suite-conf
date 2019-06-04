@@ -1,0 +1,37 @@
+/** todo: complete missing flex main nav css */
+#tutorial-english header,
+#tutorial-fran-ais header {
+  display: block;
+  border:1px solid #ddd;
+
+}
+
+#tutorial-english li,
+#tutorial-fran-ais li {
+  display: flex;
+}
+
+#tutorial-english h2 { display: none; }
+#tutorial-fran-ais h2 { display: none; }
+#tutorial-configuration-properties header { display: none; }
+#tutorial-development header { display: none; }
+#tutorial-d-veloppement header { display: none; }
+#tutorial-install header { display: none; }
+#tutorial-installation header { display: none; }
+#tutorial-propri-t-s-de-configuration header { display: none; }
+#tutorial-uses header { display: none;}
+#tutorial-utilisation header { display: none; }
+#tutorial-license header { display: none; }
+#tutorial-licence header { display: none; }
+
+nav {
+  float: none;
+  width: auto;
+  background: transparent;
+}
+
+.top-navbar {
+  background: #101010;
+  padding: 1.66667rem 0;
+  margin-bottom: 4.66667rem;
+}

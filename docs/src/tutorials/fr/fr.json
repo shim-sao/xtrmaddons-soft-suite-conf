@@ -1,0 +1,9 @@
+{
+  "title": "Français",
+  "children": [
+    "fr-install",
+    "fr-uses",
+    "fr-properties",
+    "fr-development"
+  ]
+}

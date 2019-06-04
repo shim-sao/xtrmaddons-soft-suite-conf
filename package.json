@@ -1,0 +1,90 @@
+{
+  "name": "xtrmaddons-soft-suite-conf",
+  "version": "0.1.0",
+  "description": "This package contains the configuration system used by the XtrmAddons applications in NodeJs.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "cross-env NODE_ENV=test NODE_DEBUG=trace host=192.168.1.23 nodemon --watch ./dist --exec mocha",
+    "test:dev": "cross-env NODE_ENV=development protocol=https nodemon --watch ./dist --exec mocha",
+    "test:dev-arg": "cross-env NODE_ENV=development NODE_DEBUG=trace host=192.168.1.123 port=741258 protocol=https nodemon --watch ./dist --exec mocha",
+    "test:prod": "cross-env NODE_DEBUG=trace nodemon --watch ./dist --exec mocha",
+    "build": "babel src --out-dir dist",
+    "build:docs": "npm run build & npm run docs:ink-docstrap",
+    "docs:all": "npm run docs:docdash & npm run docs:minami & npm run docs:better & npm run docs:ink-docstrap",
+    "docs:better": "jsdoc -t ./node_modules/better-docs -c ./docs/tmpl/.better-docs.js",
+    "docs:docdash": "jsdoc -t ./node_modules/docdash -c ./docs/tmpl/.docdash.js",
+    "docs:minami": "jsdoc -t ./node_modules/minami -c ./docs/tmpl/.minami.js",
+    "docs:ink-docstrap": "nodemon --watch . --exec jsdoc -t ./node_modules/ink-docstrap/template -c ./docs/tmpl/.docstrap.js -R ./docs/src/index.md",
+    "lint": "eslint src/index.js --fix"
+  },
+  "keywords": [
+    "xtrmaddons",
+    "configuration"
+  ],
+  "author": "shim-sao <contact@xtrmaddons.com> (http://www.xtrmaddons.com/)",
+  "license": "MIT",
+  "homepage": "https://github.com/shim-sao/xtrmaddons-soft-suite-conf",
+  "bugs": {
+    "url": "https://github.com/shim-sao/xtrmaddons-soft-suite-conf/issues",
+    "email": "error@xtrmaddons.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shim-sao/xtrmaddons-soft-suite-conf.git"
+  },
+  "dependencies": {
+    "argv": "0.0.2",
+    "cross-env": "^5.2.0",
+    "docdash": "^1.1.0",
+    "dotenv": "^6.2.0",
+    "module-alias": "^2.2.0",
+    "nodemon": "^1.18.10",
+    "xtrmaddons-node-fs-utils": "github:shim-sao/xtrmaddons-node-fs-utils",
+    "xtrmaddons-soft-suite-logger": "github:shim-sao/xtrmaddons-soft-suite-logger"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-decorators": "^7.4.0",
+    "@babel/plugin-proposal-private-methods": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/types": "^7.4.0",
+    "babel-eslint": "^11.0.0-beta.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-private-properties": "^1.0.2",
+    "better-docs": "^1.1.6",
+    "esdoc": "^1.1.0",
+    "esdoc-ecmascript-proposal-plugin": "^1.0.0",
+    "esdoc-node": "^1.0.4",
+    "esdoc-standard-plugin": "^1.0.0",
+    "eslint": "^5.15.3",
+    "eslint-plugin-babel": "^5.3.0",
+    "ink-docstrap": "^1.3.2",
+    "install": "^0.12.2",
+    "jsdoc-mermaid": "^1.0.0",
+    "minami": "^1.2.3",
+    "nconf": "^0.10.0",
+    "npm": "^6.9.0",
+    "regenerator-runtime": "^0.13.2",
+    "standard": "^12.0.1"
+  },
+  "_moduleAliases": {
+    "@src": "src",
+    "@dist": "dist"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "config/*",
+      "docs/*",
+      "data/*",
+      "logs/*",
+      "*.json",
+      "*.db3",
+      "*.db3-shm",
+      "*.db3-wal"
+    ],
+    "delay": "2500"
+  }
+}
