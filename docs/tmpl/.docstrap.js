@@ -7,10 +7,13 @@
  */
 const jsdocs = require("./.jsdocs.js");
 const pkg = require("../../package.json");
+
 const fs = require('fs');
 const path = require('path');
 
 const htmlFooter = fs.readFileSync(path.resolve(__dirname + "/docstrap/footer.html"));
+
+// console.log(htmlFooter);
 
 //jsdocs.opts.destination = "docs/build/jsdocs/inc-docstrap";
 jsdocs.opts.destination = "docs/html";
