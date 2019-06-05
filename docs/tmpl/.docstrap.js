@@ -14,7 +14,8 @@ const htmlFooter = fs.readFileSync(path.resolve(__dirname + "/docstrap/footer.ht
 
 //jsdocs.opts.destination = "docs/build/jsdocs/inc-docstrap";
 jsdocs.opts.destination = "docs/html";
-jsdocs.templates.theme = "cosmo";
+jsdocs.templates.copyright = "www.xtrmaddons.com"
+jsdocs.templates.theme = "flatly";
 jsdocs.templates.syntaxTheme  = "dark";
 jsdocs.templates.linenums = true;
 jsdocs.templates.logoFile = "img/logo.png";
