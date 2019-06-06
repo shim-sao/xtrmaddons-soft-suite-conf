@@ -88,7 +88,7 @@ config/
 data/*.db3
 data/*.db3-shm
 data/*.db3-wal
-package-lock.json
+# package-lock.json
 
 # QOwnNotes
 docs/build
