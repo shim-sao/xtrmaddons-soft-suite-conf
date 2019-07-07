@@ -1,4 +1,5 @@
 "use strict";
+
 /**
  * @version 			0.0.1
  * @since  				0.0.1
@@ -10,8 +11,7 @@
  * @example
  * { 'always': 'be this value' }
  */
-
-exports = module.exports = {
+export default {
   /**
    * BCrypt help you hash passwords.
    * @since  0.0.1
@@ -24,9 +24,9 @@ exports = module.exports = {
      * bcrypt salt rounds.
      * @since  0.0.1
      * @type {number}
-    	 * @see https://www.npmjs.com/package/bcrypt
+     * @see https://www.npmjs.com/package/bcrypt
      */
-    saltRounds: 10
+    saltRounds: 10,
   },
 
   /**
@@ -35,5 +35,5 @@ exports = module.exports = {
    * @type {string}
    * @see https://nodejs.org/api/process.html#process_process_cwd
    */
-  rootDir: process.cwd()
+  rootDir: process.cwd(),
 };

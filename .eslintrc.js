@@ -5,22 +5,25 @@ module.exports = {
      * @see https://eslint.org/docs/user-guide/configuring#configuration-cascading-and-hierarchy
      */
     "root": true,
-  
+
     /**
      * The following enables the browser and Node.js environments.
      * @see https://eslint.org/docs/user-guide/configuring#comments-in-configuration-files
      */
     "env": {
-      "browser": true,
-      "node": true
-      //"commonjs": true
+        "browser": true,
+        "node": true
+        //"commonjs": true
     },
 
     /**
      * A configuration file can extend the set of enabled rules from base configurations.
      * @see https://eslint.org/docs/user-guide/configuring#using-eslintrecommended
      */
-    "extends": "eslint:recommended",
+    "extends": [
+        "eslint:recommended"
+        // 'plugin:@typescript-eslint/recommended'
+    ],
 
     /**
      * ESLint allows you to specify the JavaScript language options you want to support. 
@@ -29,7 +32,7 @@ module.exports = {
      * parser options.
      * @see https://eslint.org/docs/user-guide/configuring#specifying-parser
      */
-    "parser": "babel-eslint",
+    "parser": "@typescript-eslint/parser",
 
     /**
      * ESLint parser options:
@@ -55,7 +58,7 @@ module.exports = {
      * @see https://github.com/babel/babel-eslint
      */
     "plugins": [
-      "babel"
+        // "babel"
     ],
 
     /**
@@ -71,7 +74,7 @@ module.exports = {
     "rules": {
         "indent": [
             "error",
-            "tab"
+            2
         ],
         "linebreak-style": [
             "error",
