@@ -4,14 +4,13 @@
   "description": "This package contains the configuration system used by the XtrmAddons applications in NodeJs.",
   "main": "out/index.js",
   "scripts": {
-    "typescript:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
+    "build:ts-compile": "tsc -p ./",
+    "build:ts-docs": "./node_modules/.bin/typedoc --out dist/docs --mode modules ./src",
+    "build:ts-lint": "eslint src/index.ts --fix",
     "test": "cross-env NODE_ENV=test NODE_DEBUG=trace host=192.168.1.23 nodemon --watch ./out --exec mocha  test/**/*.ts",
     "test:dev": "cross-env NODE_ENV=development protocol=https nodemon --watch ./out --exec mocha  test/**/*.ts",
     "test:dev-arg": "cross-env NODE_ENV=development NODE_DEBUG=trace host=192.168.1.123 port=741258 protocol=https nodemon --watch ./out --exec mocha  test/**/*.ts",
-    "test:prod": "cross-env NODE_DEBUG=trace nodemon --watch ./out --exec mocha test/**/*.ts",
-    "docs:all": "./node_modules/.bin/typedoc --out dist/docs --mode modules ./src",
-    "lint": "eslint src/index.ts --fix"
+    "test:prod": "cross-env NODE_DEBUG=trace nodemon --watch ./out --exec mocha test/**/*.ts"
   },
   "keywords": [
     "xtrmaddons",
@@ -40,14 +39,14 @@
     "xtrmaddons-soft-suite-logger": "github:shim-sao/xtrmaddons-soft-suite-logger"
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.4.0",
-    "@babel/node": "^7.2.2",
-    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.0",
+    "@babel/node": "^7.5.0",
+    "@babel/plugin-proposal-class-properties": "^7.5.0",
     "@babel/plugin-proposal-decorators": "^7.4.0",
     "@babel/plugin-proposal-private-methods": "^7.4.0",
-    "@babel/preset-env": "^7.4.2",
-    "@babel/types": "^7.4.0",
+    "@babel/preset-env": "^7.5.0",
+    "@babel/types": "^7.5.0",
     "@types/dotenv": "^6.1.1",
     "@types/jest": "^24.0.15",
     "@types/mocha": "^5.2.7",
@@ -72,7 +71,7 @@
     "jsdoc-plugin-typescript": "^2.0.1",
     "minami": "^1.2.3",
     "nconf": "^0.10.0",
-    "npm": "^6.9.0",
+    "npm": "^6.10.0",
     "path": "^0.12.7",
     "regenerator-runtime": "^0.13.2",
     "standard": "^12.0.1",

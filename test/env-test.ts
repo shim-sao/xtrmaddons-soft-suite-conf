@@ -32,8 +32,8 @@ describe("process.env.NODE_ENV Mocha String Test Before Required", function() {
 });
 
 // Import internal modules.
-// const Config = require("../out").default;
-const Config = require("../out").default;
+// import Config from "../";
+const Config = require("../out");
 
 // Defines some expected results.
 // Change values to your own environment.
@@ -82,7 +82,7 @@ describe("Config default properties Mocha String Test", function() {
   });
 
   it(`Config.secret should be "${secret}"`, function() {
-    assert.equal(Config.get("secret_key"), secret);
+    assert.equal(Config.secret_key, secret);
   });
 
   it(`Config.rootDir should be "${root}"`, function() {

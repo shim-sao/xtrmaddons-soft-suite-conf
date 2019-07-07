@@ -2,174 +2,54 @@
   // See https://go.microsoft.com/fwlink/?LinkId=733558 
   // for the documentation about the tasks.json format
   "version": "2.0.0",
-  "tasks": [
-    // npm install | update | prune
-    {
-      "label": "install",
-      "type": "shell",
-      "command": "npm install",
-      "windows": {
-        "command": "npm install"
-      },
-      "group": "test",
-      "presentation": {
-        "reveal": "always",
-        "panel": "new"
-      }
-    },
-    {
-      "label": "update",
-      "type": "shell",
-      "command": "npm update",
-      "windows": {
-        "command": "npm update"
-      },
-      "group": "test",
-      "presentation": {
-        "reveal": "always",
-        "panel": "new"
-      }
-    },
-    {
-      "label": "update global",
-      "type": "shell",
-      "command": "npm update -g",
-      "windows": {
-        "command": "npm update -g"
-      },
-      "group": "test",
-      "presentation": {
-        "reveal": "always",
-        "panel": "new"
-      }
-    },
-    {
-      "label": "prune",
-      "type": "shell",
-      "command": "npm prune",
-      "windows": {
-        "command": "npm prune"
-      },
-      "group": "test",
-      "presentation": {
-        "reveal": "always",
-        "panel": "new"
-      }
-    },
-
-    // npm audit
-    {
-      "label": "audit",
-      "type": "shell",
-      "command": "npm audit",
-      "windows": {
-        "command": "npm audit"
-      },
-      "group": "test",
-      "presentation": {
-        "reveal": "always",
-        "panel": "new"
-      }
-    },
-    {
-      "label": "audit fix",
-      "type": "shell",
-      "command": "npm audit fix",
-      "windows": {
-        "command": "npm audit fix"
-      },
-      "group": "test",
-      "presentation": {
-        "reveal": "always",
-        "panel": "new"
-      }
-    },
-
-    {
-      "group": "test",
-      "type": "npm",
-      "script": "lint",
-      "problemMatcher": [
-        "$eslint-compact"
-      ]
-    },
-
-    {
-      "type": "npm",
-      "script": "build",
-      "problemMatcher": [
-        "$eslint-compact"
-      ]
-    },
-    {
-      "type": "npm",
-      "script": "test",
-      "problemMatcher": [
-        "$eslint-compact"
-      ]
-    },
-    {
-      "type": "npm",
-      "script": "test:dev",
-      "problemMatcher": [
-        "$eslint-compact"
-      ]
-    },
-    {
-      "type": "npm",
-      "script": "test:prod",
-      "problemMatcher": [
-        "$eslint-compact"
-      ]
-    },
-    {
-      "type": "npm",
-      "script": "test:dev-arg",
-      "problemMatcher": [
-        "$eslint-compact"
-      ]
-    },
-    {
-      "type": "npm",
-      "script": "build:docs",
-      "problemMatcher": [
-        "$eslint-compact"
-      ]
-    },
-    {
-      "type": "npm",
-      "script": "docs:docdash",
-      "problemMatcher": [
-        "$eslint-compact"
-      ]
-    },
-    {
-      "type": "npm",
-      "script": "docs:better",
-      "problemMatcher": [
-        "$eslint-compact"
-      ]
-    },
-    {
-      "type": "npm",
-      "script": "docs:minami",
-      "problemMatcher": [
-        "$eslint-compact"
-      ]
-    },
-    {
-      "type": "npm",
-      "script": "docs:all",
-      "problemMatcher": [
-        "$eslint-compact"
-      ]
-    },
-    {
-      "type": "npm",
-      "script": "docs:ink-docstrap",
-      "problemMatcher": [
-        "$eslint-compact"
-      ]
-    }
-  ]
+  "tasks": [{
+    "group": "build",
+    "type": "npm",
+    "script": "build:ts-compile",
+    "problemMatcher": [
+      "$eslint-compact"
+    ]
+  }, {
+    "group": "build",
+    "type": "npm",
+    "script": "build:ts-docs",
+    "problemMatcher": [
+      "$eslint-compact"
+    ]
+  }, {
+    "group": "build",
+    "type": "npm",
+    "script": "build:ts-lint",
+    "problemMatcher": [
+      "$eslint-compact"
+    ]
+  }, {
+    "group": "test",
+    "type": "npm",
+    "script": "test",
+    "problemMatcher": [
+      "$eslint-compact"
+    ]
+  }, {
+    "group": "test",
+    "type": "npm",
+    "script": "test:dev",
+    "problemMatcher": [
+      "$eslint-compact"
+    ]
+  }, {
+    "group": "test",
+    "type": "npm",
+    "script": "test:dev-arg",
+    "problemMatcher": [
+      "$eslint-compact"
+    ]
+  }, {
+    "group": "test",
+    "type": "npm",
+    "script": "test:prod",
+    "problemMatcher": [
+      "$eslint-compact"
+    ]
+  }]
 }

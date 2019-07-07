@@ -9,7 +9,8 @@ process.env.NODE_ENV = "test";
 // process.env.NODE_ENV = "production";
 
 // Import Logger module.
-const Config = require("@src");
+// @ts-ignore
+const Config = require("../out");
 const Logger = require("xtrmaddons-soft-suite-logger");
 
 Logger.all.debug("process.env.NODE_ENV  after load : " + process.env.NODE_ENV);
@@ -23,11 +24,21 @@ Logger.all.debug("Config.get host : " + Config.get("host"));
 Logger.all.debug("Config.get port : " + Config.get("port"));
 Logger.all.debug("Config.get protocol : " + Config.get("protocol"));
 Logger.all.debug("Config.get rootDir : " + Config.get("rootDir"));
-Logger.all.debug("Config.get bcrypt:saltRounds : " + Config.get("bcrypt:saltRounds"));
-Logger.all.debug("Config.get bearer_token:bodyKey : " + Config.get("bearer_token:bodyKey"));
-Logger.all.debug("Config.get bearer_token:queryKey : " + Config.get("bearer_token:queryKey"));
-Logger.all.debug("Config.get bearer_token:headerKey : " + Config.get("bearer_token:headerKey"));
-Logger.all.debug("Config.get bearer_token:reqKey : " + Config.get("bearer_token:reqKey"));
+Logger.all.debug(
+  "Config.get bcrypt:saltRounds : " + Config.get("bcrypt:saltRounds")
+);
+Logger.all.debug(
+  "Config.get bearer_token:bodyKey : " + Config.get("bearer_token:bodyKey")
+);
+Logger.all.debug(
+  "Config.get bearer_token:queryKey : " + Config.get("bearer_token:queryKey")
+);
+Logger.all.debug(
+  "Config.get bearer_token:headerKey : " + Config.get("bearer_token:headerKey")
+);
+Logger.all.debug(
+  "Config.get bearer_token:reqKey : " + Config.get("bearer_token:reqKey")
+);
 Logger.all.debug("Config.get db:dateFormat : " + Config.get("db:dateFormat"));
 Logger.all.debug("Config.get db:data : " + Config.get("db:data"));
 Logger.all.debug("Config.get db.path() : " + Config.get("db").path());
