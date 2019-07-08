@@ -16,20 +16,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @requires path
  * @type     {object}
  */
-const path_1 = __importDefault(require("path"));
+var path_1 = __importDefault(require("path"));
 /**
  * @since    1.0.0
  * @requires FsUtils
  * @type     {FsUtils}
  * @see      https://github.com/shim-sao/xtrmaddons-node-fs-utils
  */
-const FsUtils = require("xtrmaddons-node-fs-utils");
+var FsUtils = require("xtrmaddons-node-fs-utils");
 /**
  * @since    1.0.0
  * @requires Config
  * @type     {string}
  */
-const Config_1 = require("../classes/Config");
+var Config_1 = require("../classes/Config");
 /**
  * Default configuration parameters:
  * @since 1.0.0
@@ -107,7 +107,7 @@ exports.default = {
          * @type  {string}
          */
         // migrations: "./src/data/migrations/production",
-        migrations: FsUtils.resolve(`/src/data/migrations/${Config_1.nodenv == "production" ? "prod" : "dev"}`),
+        migrations: FsUtils.resolve("/src/data/migrations/" + (Config_1.nodenv == "production" ? "prod" : "dev")),
         // Format of dates to store in the database.
         /**
          * Absolute path to the directory to store database files.

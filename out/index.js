@@ -14,8 +14,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
  * @requires Config
  * @type     {Config}
  */
-const Config_1 = __importDefault(require("./classes/Config"));
-module.exports = (() => {
+var Config_1 = __importDefault(require("./classes/Config"));
+module.exports = (function () {
     Config_1.default.initialize();
     return Config_1.default;
 })();
