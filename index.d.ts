@@ -1,4 +1,5 @@
 declare class Config {
+  public static secret_key: string;
   public static filename: string;
   public static rootDir: string;
   public static app?: string;
