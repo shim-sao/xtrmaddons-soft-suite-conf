@@ -102,10 +102,17 @@ export default {
     /**
      * filename or full path to the database file.
      * @since 1.0.0
+     * 
+     * @param name A file name.
+     * @param root The path of the file.
+     * 
      * @type  {string}
      */
-    path: function() {
-      return path.join(this.data, this.file);
+    path: function (name: string = "", root: string = ""): string {
+      return path.join(
+        root ? root : this.data,
+        name ? name : this.file
+      );
     },
 
     /**
@@ -155,7 +162,7 @@ export default {
      * @since 1.0.0
      * @type  {string}
      */
-    path: function() {
+    path: function () {
       return path.join(this.directory, this.file);
     },
   },
