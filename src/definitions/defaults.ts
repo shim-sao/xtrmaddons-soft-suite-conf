@@ -108,10 +108,10 @@ export default {
      * 
      * @type  {string}
      */
-    path: function (name: string = "", root: string = ""): string {
+    path: function (name: string = "", root: string = "", ext: string = ".db3"): string {
       return path.join(
-        root ? root : this.data,
-        name ? name : this.file
+        root ? (path.isAbsolute(root) ? root : path.join(this.data, root)) : this.data,
+        name ? name + (ext ? ext : ".db3") : this.file
       );
     },
 
