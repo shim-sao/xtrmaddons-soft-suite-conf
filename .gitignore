@@ -83,7 +83,8 @@ typings/
 jsconfig.json
 
 # Application files & directory
-_bak/
+.back/
+.backup/
 config/
 data/*.db3
 data/*.db3-shm
